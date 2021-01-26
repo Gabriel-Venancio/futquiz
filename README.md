@@ -17,8 +17,12 @@ Aplicação de um quiz web sobre conhecimento de futebol.
 
 ### :blush: Pré-requisitos
 
-Para visualizar o site em sua máquina, você só precisa ter um navegador de sua preferência, depois de fazer o Git Clone.
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+Para visualizar a plataforma em sua máquina, faça um GitClone e rode os seguintes comandos:
+
+<code>npm install</code>
+<code>npm run dev</code>
+
+Abra o seu navegador em http://localhost:3000/
 
 ### 🛠 Tecnologias
 
