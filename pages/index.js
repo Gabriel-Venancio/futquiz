@@ -1,10 +1,13 @@
-import styled from 'styled-components'
-import db from '../db.json';
-import Widget from '../src/components/Widget'
-import QuizBackground from '../src/components/QuizBackground'
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
+import React from 'react';
+import styled from 'styled-components';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
+import db from '../db.json';
+import Widget from '../src/components/Widget';
+import QuizBackground from '../src/components/QuizBackground';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
 
 // const BackgroundImage = styled.div `
 //   background-image: url(${db.bg});
@@ -25,28 +28,71 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState('');
+
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>FutQuiz</title>
+        {/* <!-- Primary Meta Tags -->
+<title>Você conhece tudo de futebol?</title>
+<meta name="title" content="Você conhece tudo de futebol?">
+<meta name="description" content="">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://futquiz.gabriel-venancio.vercel.app/">
+<meta property="og:title" content="Você conhece tudo de futebol?">
+<meta property="og:description" content="">
+<meta property="og:image" content="">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://futquiz.gabriel-venancio.vercel.app/">
+<meta property="twitter:title" content="Você conhece tudo de futebol?">
+<meta property="twitter:description" content="">
+<meta property="twitter:image" content=""> */}
+      </Head>
       <QuizContainer>
         <Widget>
-        <Widget.Header>
-              <h1>Você conhece tudo de futebol?</h1>
-            </Widget.Header>
+          <Widget.Header>
+            <h1>Você conhece tudo de futebol?</h1>
+          </Widget.Header>
           <Widget.Content>
             <p>Testes os seus conhecimentos sobre o universo do futebol e divirta-se!</p>
+            <form onSubmit={function (infosDoEvento) {
+              infosDoEvento.preventDefault();
+              router.push(`/quiz?name=${name}`);
+              console.log('Fazendo uma submissao por meio do react');
+            }}
+            >
+              <input
+                onChange={function (infosDoEvento) {
+                  console.log(infosDoEvento.target.value);
+                  // name = infosDoEvento.target.value;
+                  setName(infosDoEvento.target.value);
+                }}
+                placeholder="Diz ai seu nome"
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar
+                {name}
+              </button>
+            </form>
           </Widget.Content>
-          
+
         </Widget>
-          
+
         <Widget>
-            <Widget.Content>
-              <h1>Quizes da Galera</h1>
-              <p>Dá uma olhada nesses quizes incríveis que o pessoal da Imersão Alura fez:</p>
-            </Widget.Content>
+          <Widget.Content>
+            <h1>Quizes da Galera</h1>
+            <p>Dá uma olhada nesses quizes incríveis que o pessoal da Imersão Alura fez:</p>
+          </Widget.Content>
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner />
+      <GitHubCorner projectUrl="https://github.com/Gabriel-Venancio/futquiz" />
     </QuizBackground>
-  )
+  );
 }
