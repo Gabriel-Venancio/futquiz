@@ -11,11 +11,11 @@
 </h4>
 
 
-### :dart: Objetivo
+# Objetivo
 
 Aplicação de um quiz web sobre conhecimento de futebol.
 
-### :blush: Pré-requisitos
+## Pré-requisitos
 
 Para visualizar a plataforma em sua máquina, faça um GitClone e rode os seguintes comandos:
 
@@ -24,7 +24,7 @@ Para visualizar a plataforma em sua máquina, faça um GitClone e rode os seguin
 
 Abra o seu navegador em http://localhost:3000/
 
-### 🛠 Tecnologias
+## Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
@@ -32,9 +32,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - Next.JS
 - Styled Components
 
-### 📜 Licença
+## Licença
 
 This project could be used by anyone! MIT License
 
-### :smiley: Autor
+## Autor
 Feito com ❤️ por Gabriel Venancio 
