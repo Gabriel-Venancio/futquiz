@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Lottie } from '@crello/react-lottie';
+
+// import { Lottie } from '@crello/react-lottie';
 // import db from '../../../db.json';
 import Widget from '../../components/Widget';
 import QuizBackground from '../../components/QuizBackground';
@@ -61,12 +62,13 @@ function LoadingWidget() {
       <Widget.Content
         style={{ display: 'flex', justifyContent: 'center' }}
       >
-        <Lottie
+        {/* <Lottie
           width="200px"
           height="200px"
           className="lottie-container basic"
+          // eslint-disable-next-line no-undef
           config={{ animationData: loadingAnimation, loop: true, autoplay: true }}
-        />
+        /> */}
 
       </Widget.Content>
     </Widget>
