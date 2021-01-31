@@ -2,6 +2,7 @@
 import React from 'react';
 import db from '../../db.json';
 import Widget from '../../src/components/Widget';
+import BackLinkArrow from '../../src/components/BackLinkArrow';
 import QuizBackground from '../../src/components/QuizBackground';
 import QuizContainer from '../../src/components/QuizContainer';
 import AlternativesForm from '../../src/components/AlternativesForm';
@@ -73,7 +74,7 @@ function QuestionWidget({
   return (
     <Widget>
       <Widget.Header>
-        {/* <BackLinkArrow href="/* /> */}
+        <BackLinkArrow href="/" /> 
         <h3>
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h3>

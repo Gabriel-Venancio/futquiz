@@ -9,7 +9,7 @@ import AlternativesForm from '../../components/AlternativesForm';
 import Button from '../../components/Button';
 import BackLinkArrow from '../../components/BackLinkArrow';
 
-import loadingAnimation from './animations/loading.json';
+// import loadingAnimation from './animations/loading.json';
 
 function ResultWidget({ results }) {
   return (
@@ -59,14 +59,15 @@ function LoadingWidget() {
       </Widget.Header>
 
       <Widget.Content
-        style={{ display: 'flex', justifyContent: 'center' }}>
+        style={{ display: 'flex', justifyContent: 'center' }}
+      >
         <Lottie
           width="200px"
           height="200px"
           className="lottie-container basic"
           config={{ animationData: loadingAnimation, loop: true, autoplay: true }}
-      />
-        
+        />
+
       </Widget.Content>
     </Widget>
   );
@@ -159,7 +160,7 @@ const screenStates = {
   LOADING: 'LOADING',
   RESULT: 'RESULT',
 };
-export default function QuizPage({externalQuestions, externalBg}) {
+export default function QuizPage({ externalQuestions, externalBg }) {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [results, setResults] = React.useState([]);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
